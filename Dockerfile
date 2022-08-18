@@ -36,8 +36,16 @@ RUN /usr/bin/npm install npm -g
 # package copy
 COPY ./package.json /app/web2/package.json
 
+ENV NODE_ENV development
+ENV INTERNAL_STATUS_PORT 5001
+ENV CHOKIDAR_USEPOLLING true
+ENV GATSBY_WEBPACK_PUBLICPATH /
+
 # node_module root
-RUN cd /app/web2 && npm install
+RUN cd /app/web2 && yarn install
+
+RUN mkdir /app/web2/node_modules/.cache
+RUN chmod -R 777 /app/web2/node_modules/.cache
 
 # homepage root
 WORKDIR /app/web
@@ -65,6 +73,6 @@ RUN  echo "echo ' **************************************************************
 VOLUME ["/app/web", "/app/web2"]
 
 # Port setting
-EXPOSE 8000
+EXPOSE 8000 5001
 
 CMD ["/bin/bash"]
