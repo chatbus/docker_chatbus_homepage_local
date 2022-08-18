@@ -2,9 +2,9 @@ version: '1.0'
 
 services:
   docker-nextjs-local:
-    image: docker-nextjs-local
+    image: docker_chatbus_homepage_local
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 3000:3000
+      - 8000:8000
