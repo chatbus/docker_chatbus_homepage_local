@@ -31,5 +31,11 @@
     },
     "bugs": {
         "url": "https://github.com/chatbus/chatbus_hompage/issues"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.8",
+        "gatsby-plugin-postcss": "^5.22.0",
+        "postcss": "^8.4.16",
+        "tailwindcss": "^3.1.8"
     }
 }
