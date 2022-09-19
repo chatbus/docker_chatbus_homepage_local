@@ -21,6 +21,8 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "d
 ENV NPM_CONFIG_LOGLEVEL debug
 ENV NODE_VERSION 16.17.0
 
+RUN rm -rf /bin/sh && ln -s /bin/bash /bin/sh
+
 # work dir make
 RUN mkdir /app
 RUN chmod 777 -R /app
