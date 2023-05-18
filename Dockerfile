@@ -12,14 +12,14 @@ RUN apt-get update \
                         cron supervisor automake autotools-dev build-essential \
     					gettext-base libelf1 \
 						cron vim curl ssh git unzip nodejs \
-	&& curl -sL https://deb.nodesource.com/setup_16.x | bash - \
+	&& curl -sL https://deb.nodesource.com/setup_18.x | bash - \
 	&& apt-get install -y nodejs \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && apt-get update && apt-get install yarn && rm -rf /var/lib/apt/lists/*
 
 ENV NPM_CONFIG_LOGLEVEL debug
-ENV NODE_VERSION 16.17.0
+ENV NODE_VERSION 18.16.0
 ENV NODE_OPTIONS --max-old-space-size=4096
 
 RUN rm -rf /bin/sh && ln -s /usr/bin/bash /bin/sh
