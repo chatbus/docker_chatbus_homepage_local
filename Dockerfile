@@ -5,6 +5,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 LABEL Name="docker_chatbus_homepage_local Version=0.0.1"
 LABEL maintainer="Jiam Seo <jams7777@gmail.com>"
 
+
 # Install wget and install/updates certificates node
 RUN apt-get update \
 	&& apt-get install --no-install-recommends --no-install-suggests -y \
